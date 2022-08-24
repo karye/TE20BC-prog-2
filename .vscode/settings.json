@@ -1,0 +1,15 @@
+{
+    "workbench.editorAssociations": {   
+        "*.md": "vscode.markdown.preview.editor",
+    },
+    "workbench.colorCustomizations": {
+        "[Sublime Monokai]": {
+            "editor.selectionHighlightBackground": "#ff000054",
+            "editor.background": "#2b2b2b",
+            "tab.inactiveForeground": "#888888"
+        },
+        "activityBar.background": "#3B1D61",
+        "titleBar.activeBackground": "#532888",
+        "titleBar.activeForeground": "#FBF9FD"
+    }
+}
