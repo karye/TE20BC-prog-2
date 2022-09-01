@@ -5,8 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Grunder"
         mc:Ignorable="d"
-        Title="Min app" Height="250" Width="200">
-    <Grid>
-        <Button>OK</Button>
-    </Grid>
+        Title="Min app" Height="200" Width="200" Background="#EEE">
+    <StackPanel Margin="5">
+        <Label>Ange en text</Label>
+        <TextBox Name="textruta" Height="50" Margin="5" Padding="5"></TextBox> 
+        <Button Click="ClickKnappOk" Margin="5">OK</Button>
+        <Button Click="ClickKnappAvbryt" Margin="5">Avbryt</Button>
+    </StackPanel>
 </Window>

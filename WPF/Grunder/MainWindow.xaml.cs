@@ -24,5 +24,19 @@ namespace Grunder
         {
             InitializeComponent();
         }
+
+        // Fånga upp "event" ClickKnappOk
+        private void ClickKnappOk(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Klickade på knappen OK");
+            textruta.Text += "Klickade på knappen OK\n";
+        }
+
+        // Fånga upp "event" ClickKnappAvbryt
+        private void ClickKnappAvbryt(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Klickade på knappen Avbryt");
+            textruta.Text += "Klickade på knappen Avbryt\n";
+        }
     }
 }
