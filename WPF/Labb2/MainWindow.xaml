@@ -5,10 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Labb2"
         mc:Ignorable="d"
-        Title="Slump" Height="200" Width="250">
+        Title="Slump" Height="220" Width="250" Background="#EEE">
     <StackPanel Margin="5">
-        <Label >Slumpa fram ett tal 1-100</Label>
-        <Button Click="KlickSlumpa">Slumpa!</Button>
-        <TextBox Name="rutaResultat"></TextBox>
+        <Label FontWeight="Bold">Slumpa fram ett tal</Label>
+        <Label >Ange maxgräns</Label>
+        <TextBox Margin="5" Name="rutaMax" ></TextBox>
+        <Button Margin="5" Padding="5" Click="KlickSlumpa">Slumpa!</Button>
+        <Label >Resultat</Label>
+        <TextBox Margin="5" Name="rutaResultat"></TextBox>
     </StackPanel>
 </Window>

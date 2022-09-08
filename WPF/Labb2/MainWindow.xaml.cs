@@ -28,9 +28,28 @@ namespace Labb2
         // Hantera klick på knappen SLumpa!
         private void KlickSlumpa(object sender, RoutedEventArgs e)
         {
+            // Läs in max
+            string maxString = rutaMax.Text;
+            int max = 0;
+            int slumptal = 0;
+
+            /* if (maxString == "")
+            {
+                max = 101;
+            }
+            else
+            {
+                max = int.Parse(maxString);
+            } */
+
+            if (!int.TryParse(maxString, out max))
+            {
+                max = 101;
+            }
+            
             // Slumpa fram ett tal 
             Random generator = new Random();
-            int slumptal = generator.Next(1, 101);
+            slumptal = generator.Next(1, max);
 
             rutaResultat.Text = slumptal.ToString(); // $"{slumptal}"
         }
