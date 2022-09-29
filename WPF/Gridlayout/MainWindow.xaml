@@ -26,12 +26,12 @@
         <Label Grid.Row="0" Grid.Column="1" FontSize="24">Meddelanden</Label>
 
         <Label Grid.Row="1" Grid.Column="0">Ange epost</Label>
-        <TextBox Grid.Row="1" Grid.Column="1" /> 
+        <TextBox Name="rutaEpost" Grid.Row="1" Grid.Column="1" /> 
 
         <Label Grid.Row="2" Grid.Column="0">Ange texten</Label>
-        <TextBox Grid.Row="2" Grid.Column="1" MinHeight="100" /> 
+        <TextBox Name="rutaTexten" Grid.Row="2" Grid.Column="1" MinHeight="100" /> 
 
-        <Button Grid.Row="3" Grid.ColumnSpan="2">Skicka!</Button>
-        <TextBox Grid.Row="4" Grid.ColumnSpan="2" IsReadOnly="True" /> 
+        <Button Click="KlickSkicka" Grid.Row="3" Grid.ColumnSpan="2">Skicka!</Button>
+        <TextBox Name="rutaStatus" Grid.Row="4" Grid.ColumnSpan="2" IsReadOnly="True" /> 
     </Grid>
 </Window>
