@@ -43,7 +43,6 @@ namespace Gridlayout
                     rutaStatus.Text = "Epost skickad";
                 }
             }
-
         }
     }
 }
