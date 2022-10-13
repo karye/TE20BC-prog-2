@@ -10,6 +10,8 @@ namespace StackPanel
         public MainWindow()
         {
             InitializeComponent();
+
+            
         }
 
         private void KlickSkicka(object sender, RoutedEventArgs e)
