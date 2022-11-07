@@ -1,0 +1,10 @@
+@startuml
+class Score {
+    + Namn : string <<get>> <<set>>
+    + Poäng : int <<get>> <<set>>
+    + Datum : DateTime <<get>> <<set>>
+}
+class Program {
+    {static} Main(args:string[]) : void
+}
+@enduml

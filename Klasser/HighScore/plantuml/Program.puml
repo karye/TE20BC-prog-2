@@ -1,0 +1,10 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+hide circle
+class Score {
+    + Namn : string <<get>> <<set>>
+    + Poäng : int <<get>> <<set>>
+    + Datum : DateTime <<get>> <<set>>
+}
+@enduml
