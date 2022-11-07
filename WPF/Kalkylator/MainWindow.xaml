@@ -1,0 +1,31 @@
+﻿<Window x:Class="Kalkylator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kalkylator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400"
+        SizeToContent="WidthAndHeight">
+    <StackPanel Margin="5">
+        <Label FontSize="20">Enkel kalkylator</Label>
+        <DockPanel>
+            <Label>Tal 1</Label>
+            <TextBox Name="rutaTal1" />
+        </DockPanel>
+        <DockPanel>
+            <Label>Tal 2</Label>
+            <TextBox Name="rutaTal2" />
+        </DockPanel>
+        <DockPanel>
+            <Button Click="KnappPlus" Width="50" Height="30">+</Button>
+            <Button Width="50" Height="30">-</Button>
+            <Button Width="50" Height="30">*</Button>
+            <Button Width="50" Height="30">/</Button>
+        </DockPanel>
+        <Label FontSize="15">Resultat</Label>
+        <TextBox Name="rutaResultat" />
+
+        <TextBox Name="rutaAntalKlick" />
+    </StackPanel>
+</Window>
