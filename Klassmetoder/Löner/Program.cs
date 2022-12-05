@@ -15,15 +15,14 @@ namespace Löner
             // Loop för att mata in varje anställd: namn, timmar, timlön
             while (true)
             {
-                // Objekt
-                PersonInkomst anställd = new PersonInkomst();
-
                 Console.Write("Ange namn: ");
-                anställd.namn = Console.ReadLine();
+                string namn = Console.ReadLine();
                 Console.Write("Ange antal timmar: ");
-                anställd.timmar = int.Parse(Console.ReadLine());
+                int timmar = int.Parse(Console.ReadLine());
                 Console.Write("Ange timlön: ");
-                anställd.timlön = int.Parse(Console.ReadLine());
+                int timlön = int.Parse(Console.ReadLine());
+
+                PersonInkomst anställd = new PersonInkomst(namn, timmar, timlön);
 
                 // Spara i listan
                 listaAnställda.Add(anställd);
