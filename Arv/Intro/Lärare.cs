@@ -6,7 +6,7 @@ namespace Intro
     {
         public string anställningÅr;
 
-        public void SkrivInfoLärare()
+        public override void SkrivInfo()
         {
             Console.WriteLine($"Namn: {namn}, mobil: {mobil}, anställningÅr: {anställningÅr}");
         }

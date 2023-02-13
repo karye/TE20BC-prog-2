@@ -1,0 +1,20 @@
+@startuml
+!theme plain
+skinparam classAttributeIconSize 0
+hide circle
+class Lärare {
+    + anställningÅr : string
+    + <<override>> SkrivInfo() : void
+}
+Person <|-- Lärare
+class Person {
+    + namn : string
+    + mobil : string
+    + <<virtual>> SkrivInfo() : void
+}
+class Student {
+    + årskull : string
+    + <<override>> SkrivInfo() : void
+}
+Person <|-- Student
+@enduml

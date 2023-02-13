@@ -1,0 +1,7 @@
+@startuml
+class Student {
+    + årskull : string
+    + <<override>> SkrivInfo() : void
+}
+Person <|-- Student
+@enduml

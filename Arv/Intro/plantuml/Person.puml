@@ -1,0 +1,7 @@
+@startuml
+class Person {
+    + namn : string
+    + mobil : string
+    + <<virtual>> SkrivInfo() : void
+}
+@enduml
