@@ -13,8 +13,6 @@ namespace BlackJack
         private int _värde;
         // Färgen på kortet; Hjärter, Ruter, Spader, Klöver
         private Färgtyp _färg;
-        // BlackJack värde: 1-10, 11
-        private int _värdeBlackJack;
 
         // Metoder
         // Konstruktor
@@ -48,6 +46,24 @@ namespace BlackJack
                 default:
                     return textenFärg + _värde;
 
+            }
+        }
+
+        // Räkna ut BlackJack värdet
+        public int BlackJackVärde()
+        {
+            switch (_värde)
+            {
+                case 1:
+                    return 1;   // @TODO Ess kan vara 11 också!
+                case 11:
+                    return 10;
+                case 12:
+                    return 10;
+                case 13:
+                    return 10;
+                default:
+                    return _värde;
             }
         }
     }

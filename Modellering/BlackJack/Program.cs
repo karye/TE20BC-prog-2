@@ -9,25 +9,21 @@ namespace BlackJack
         {
             Console.WriteLine("Välkommen till Black Jack!");
 
-            // Två kort till Ashkan
-            // Spader Kung & Ess
-            Kort spaderKung = new Kort(Färgtyp.Spader, 13);
-            Kort spaderEss = new Kort(Färgtyp.Spader, 1);
+            // Skriv ut alla kort i kortleken
+            // Steg 1 Skapa ett objekt = kortlek
+            KortLek kortlek = new KortLek();
 
-            // Ashkans hand är tom
-            List<Kort> handAshkan = new List<Kort>();
+            // Steg 2 - fyll med alla 52 kort
+            kortlek.SkapaKortLek();
 
-            // Fyll handen med dessa två kort
-            handAshkan.Add(spaderEss);
-            handAshkan.Add(spaderKung);
+            // Steg 3 - blanda
+            kortlek.BlandaKortlek();
 
-            // Skriver ut handen
-            // Loopa igenom listan handAshkan
-            // Och skriv ut korten så att användaren förstår
-            foreach (var kort in handAshkan)
-            {
+            // Steg 4 
+           foreach (var kort in  kortlek.GeKortlek())
+           {
                 Console.WriteLine(kort.TillText());
-            }
+           }
         }
     }
 }
