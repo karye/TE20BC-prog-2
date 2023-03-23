@@ -70,10 +70,18 @@ namespace BlackJack
             }
         }
 
-        // EN metod som skan ge ut kortleken
+        // En metod som skan ge ut kortleken
         public List<Kort> GeKortlek()
         {
             return _korten;
+        }
+
+        // Här dras översta kortet
+        public Kort DraKort()
+        {
+            Kort kortet = _korten[0];
+            _korten.RemoveAt(0);
+            return kortet;
         }
     }
 }

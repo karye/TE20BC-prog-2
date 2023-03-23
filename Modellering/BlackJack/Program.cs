@@ -20,10 +20,31 @@ namespace BlackJack
             kortlek.BlandaKortlek();
 
             // Steg 4 
-           foreach (var kort in  kortlek.GeKortlek())
+           /* foreach (var kort in  kortlek.GeKortlek())
            {
                 Console.WriteLine(kort.TillText());
-           }
+           } */
+
+           // Testa att dra ett kort o skriv ut det
+           Kort ettKort = kortlek.DraKort();
+           Console.WriteLine(ettKort.TillText());
+
+           // Skapa en spelare med ett namn
+           Spelare spelare1 = new Spelare("Kalle");
+
+           // Ge spelare1 det dragna kortet
+           spelare1.TaEmotKort(ettKort);
+
+           // Skriv spelare1 totala poäng
+           Console.WriteLine(spelare1.Poäng());
+
+           // Dra ett till kort och ge till spelare1
+           ettKort = kortlek.DraKort();
+           Console.WriteLine(ettKort.TillText());
+           spelare1.TaEmotKort(ettKort);
+           Console.WriteLine(spelare1.Poäng());
+
+           
         }
     }
 }
