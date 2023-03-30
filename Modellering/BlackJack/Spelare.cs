@@ -26,7 +26,7 @@ namespace BlackJack
 
         // Metod för att räkna ihop totala
         // BlackJack-poängen för alla kort i "handen"
-        public int Poäng()
+        public virtual int Poäng()
         {
             int summaPoäng = 0;
             foreach (var kort in _hand)

@@ -49,26 +49,27 @@ namespace BlackJack
                 }
                 Console.WriteLine($"\nPoäng: {spelare1.Poäng()}");
 
-                // Om spelaren får 21, vinner spelaren direkt.
-                if (spelare1.Poäng() == 21)
-                {
-                    Console.WriteLine("Du har Black Jack och du har vunnit spelomgången!");
-                    spelStatus = "vunnit";
-                    break;
-                }
-                else if (dealer.Poäng() == 21)
+                // Om dealern får 21 förlorar spelaren!
+                if (dealer.Poäng() == 21)
                 {
                     Console.WriteLine("Dealern har Black Jack och du har forlorat spelomgången!");
                     spelStatus = "förlorat";
+                    break;
+                }
+                // Om spelaren får 21, vinner spelaren direkt.
+                else if (spelare1.Poäng() == 21)
+                {
+                    Console.WriteLine("Du har Black Jack och du har vunnit spelomgången!");
+                    spelStatus = "vunnit";
                     break;
                 }
 
                 // Visa dealerns första kort
                 Console.WriteLine("Dealerm kort är: " + dealer.Hand()[0].TillText());
 
+                // Spelaren får välja att dra kort eller stanna. Om spelaren stannar, går turen vidare till dealern.
                 while (true)
                 {
-                    // Spelaren får välja att dra kort eller stanna. Om spelaren stannar, går turen vidare till dealern.
                     Console.Write("Vill du dra ett kort till (j/n): ");
                     string val = Console.ReadLine();
                     if (val.ToLower() == "j")
@@ -95,7 +96,8 @@ namespace BlackJack
                     }
                 }
 
-                Console.ReadLine();
+                // Dealern drar kort tills den når 17 eller över. 
+                // Om dealern får 21, eller över och då förlorar spelaren direkt.
                 
             }
         }
