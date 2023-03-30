@@ -65,7 +65,7 @@ namespace BlackJack
                 }
 
                 // Visa dealerns första kort
-                Console.WriteLine("Dealerm kort är: " + dealer.Hand()[0].TillText());
+                Console.WriteLine("Dealern kort är: " + dealer.Hand()[0].TillText());
 
                 // Spelaren får välja att dra kort eller stanna. Om spelaren stannar, går turen vidare till dealern.
                 while (true)
@@ -96,10 +96,58 @@ namespace BlackJack
                     }
                 }
 
+                // Spelaren har förlorat
+                if (spelStatus == "förlorat" || spelStatus == "vunnit")
+                {
+                    break;
+                }
+
                 // Dealern drar kort tills den når 17 eller över. 
+                while (dealer.Poäng() < 17)
+                {
+                    // Dealern drar ett kort
+                    dealer.TaEmotKort(kortlek.DraKort());
+                }
+
                 // Om dealern får 21, eller över och då förlorar spelaren direkt.
-                
+                if (dealer.Poäng() > 21)
+                {
+                    Console.WriteLine("Dealern har mer 21, du vann!");
+                    spelStatus = "vunnit";
+                    break;
+                }
+
+                // Om dealern får 21
+                if (dealer.Poäng() == 21 && spelare1.Poäng() < 21)
+                {
+                    Console.WriteLine("Du förlorar!");
+                    spelStatus = "förlorat";
+                    break;
+                }
+
+                // Om dealer och spelaren har lika många poäng
+                if (dealer.Poäng() == spelare1.Poäng())
+                {
+                    Console.WriteLine("Oavgjort!");
+                    spelStatus = "oavgjort";
+                    break;
+                }
+                // Vem har högst har vunnit!
+                else if (dealer.Poäng() < spelare1.Poäng())
+                {
+                    Console.WriteLine("Du har högre poäng och vinner!");
+                    spelStatus = "vunnit";
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("Du har lägre poäng och förlorar!");
+                    spelStatus = "förlorat";
+                    break;
+                }
             }
+
+            // Spelet är slut!
         }
     }
 }
