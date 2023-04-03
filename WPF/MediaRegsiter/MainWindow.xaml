@@ -60,16 +60,11 @@
             </TabItem>
         </TabControl>
         <ListBox Name="rutaResultat" Grid.Row="0" Grid.Column="1" Margin="5" />
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" Orientation="Horizontal"
-            Background="#FFF">
+        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5" Orientation="Horizontal" Background="#FFF">
             <Label FontWeight="Bold">Visa</Label>
-            <RadioButton Name="allt" Checked="CheckRadio" IsChecked="True" GroupName="filter"
-                Margin="5">
-                Allt</RadioButton>
-            <RadioButton Name="böcker" Checked="CheckRadio" IsChecked="False" GroupName="filter"
-                Margin="5">Böcker</RadioButton>
-            <RadioButton Name="filmer" Checked="CheckRadio" IsChecked="False" GroupName="filter"
-                Margin="5">Filmer</RadioButton>
+            <RadioButton Name="allt" Checked="CheckRadio" IsChecked="True" GroupName="filter" Margin="5">Allt</RadioButton>
+            <RadioButton Name="böcker" Checked="CheckRadio" IsChecked="False" GroupName="filter" Margin="5">Böcker</RadioButton>
+            <RadioButton Name="filmer" Checked="CheckRadio" IsChecked="False" GroupName="filter" Margin="5">Filmer</RadioButton>
         </StackPanel>
     </Grid>
 </Window>
