@@ -29,19 +29,34 @@ namespace MediaRegister
         // Hantera Spara film
         private void KlickSparaFilm(object sender, RoutedEventArgs e)
         {
-            
+            // Steg 1 - läs in från textrutorna
+            string titel = rutaFilmtitel.Text;
+            string regissör = rutaRegissör.Text;
+            string längd = rutaLängd.Text;
+
+            // Steg 2 - spara i ett objekt (instans)
+            Film film = new Film();
+            film._titel = titel;
+            film._regissör = regissör;
+            film._längd = längd;
+
+            // Steg 3 - skriv ut listan
+            rutaResultat.Items.Add(film.TillText());
         }
 
-        // Hantera Spara film
+        // Hantera Spara Bok
         private void KlickSparaBok(object sender, RoutedEventArgs e)
         {
-            
+            Bok bok = new Bok(rutaBoktitel.Text, rutaFörfattare.Text, rutaAntalSidor.Text);
+            rutaResultat.Items.Add(bok.TillText());
+
+            //rutaResultat.Items.Add(new Bok(rutaBoktitel.Text, rutaFörfattare.Text, rutaAntalSidor.Text).TillText());
         }
 
         // Hantera klick på radioknapp
         private void CheckRadio(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }
