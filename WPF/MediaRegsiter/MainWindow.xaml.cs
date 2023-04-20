@@ -20,6 +20,9 @@ namespace MediaRegister
     /// </summary>
     public partial class MainWindow : Window
     {
+        // Nyttjar polymorphism, dvs Media kan hantera både Bok och Film
+        List<Media> register = new List<Media>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -42,6 +45,9 @@ namespace MediaRegister
 
             // Steg 3 - skriv ut listan
             rutaResultat.Items.Add(film.TillText());
+
+            // Steg 4 - spara i listan
+            register.Add(film);
         }
 
         // Hantera Spara Bok
@@ -50,13 +56,49 @@ namespace MediaRegister
             Bok bok = new Bok(rutaBoktitel.Text, rutaFörfattare.Text, rutaAntalSidor.Text);
             rutaResultat.Items.Add(bok.TillText());
 
-            //rutaResultat.Items.Add(new Bok(rutaBoktitel.Text, rutaFörfattare.Text, rutaAntalSidor.Text).TillText());
+            register.Add(bok);
         }
 
         // Hantera klick på radioknapp
         private void CheckRadio(object sender, RoutedEventArgs e)
         {
+            // Rensar listboxen i gränssnitt
+            rutaResultat.Items.Clear();
 
+            // Vilken radioknapp har tryckts på? (allt, böcker, filmer)
+            string typ = ((RadioButton)sender).Name;
+
+            // Beroende på typ
+            switch (typ)
+            {
+                case "allt":
+                    // Skriv ut allt registret (radioknappen Allt)
+                    foreach (var media in register)
+                    {
+                        rutaResultat.Items.Add(media.TillText());
+                    }
+                    break;
+                case "böcker":
+                    foreach (var media in register)
+                    {
+                        // Plocka bara ut böcker
+                        if (media is Bok)       // is kollar namnet på klassen
+                        {
+                            rutaResultat.Items.Add(media.TillText());
+                        }
+                    }
+                    break;
+                case "filmer":
+                    foreach (var media in register)
+                    {
+                        // Plocka bara ut filmer
+                        if (media is Film)
+                        {
+                            rutaResultat.Items.Add(media.TillText());
+                        }
+                    }
+                    break;
+            }
         }
     }
 }
